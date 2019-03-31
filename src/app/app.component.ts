@@ -8,27 +8,27 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./app.component.scss'],
   animations: [
     trigger('moveInLeft', [
-      transition('void=> *', [style({transform: 'translateX(300px)'}),
-        animate('200ms ease-out', keyframes([
-          style({transform: 'translateX(300px)'}),
-          style({transform: 'translateX(0)'})
+      transition('void=> *', [style({ transform: 'translateX(300px)' }),
+      animate('200ms ease-out', keyframes([
+        style({ transform: 'translateX(300px)' }),
+        style({ transform: 'translateX(0)' })
 
-        ]))]),
-      transition('*=>void', [style({transform: 'translateX(0px)'}),
-        animate('250ms ease-in',   keyframes([
-          style({transform: 'translateY(-20px)', opacity: 1, offset: 0.2}),
-          style({transform: 'translateY(250px)', opacity: 0 , offset: 1})
+      ]))]),
+      transition('*=>void', [style({ transform: 'translateX(0px)' }),
+      animate('250ms ease-in', keyframes([
+        style({ transform: 'translateY(-20px)', opacity: 1, offset: 0.2 }),
+        style({ transform: 'translateY(250px)', opacity: 0, offset: 1 })
 
-        ]))])
+      ]))])
 
     ])
   ]
 })
-export class AppComponent implements OnInit{
+export class AppComponent implements OnInit {
   todoArray: string[] = [];
 
   public form: FormGroup;
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder) { }
 
   ngOnInit(): void {
     this.constructForm();
